@@ -1,0 +1,49 @@
+name: note_app_drift_database_sql
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  cupertino_icons: ^1.0.2
+  flutter_slidable: ^1.2.0
+  easy_localization: ^3.0.0
+  provider: ^6.0.2
+  hive: ^2.0.5
+  hive_flutter: ^1.1.0
+  drift: ^1.4.0
+  path_provider: ^2.0.8
+  path: ^1.8.0
+  sqlite3_flutter_libs: ^0.5.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  drift_dev: ^1.4.0
+  build_runner: ^2.1.7
+
+
+  flutter_lints: ^1.0.0
+
+
+flutter:
+
+
+  uses-material-design: true
+
+
+  assets:
+    - assets/translations/
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf

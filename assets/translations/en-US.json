@@ -1,0 +1,14 @@
+{
+  "appbar": "Notes",
+  "center": "No notes",
+  "new note": "New Note",
+  "enter note": "Enter your note!",
+  "cancel": "CANCEL",
+  "save": "SAVE",
+  "delete": "Delete",
+  "edit": "Edit",
+  "edit note": "Edit Note",
+  "selected": "{} selected",
+  "confirm delete":"Delete {} file(s)?",
+  "cancelDelete": "Cancel"
+}

@@ -1,0 +1,14 @@
+{
+  "appbar": "Eslatmalar",
+  "center": "Eslatmalar yo'q",
+  "new note": "Yangi Eslatma",
+  "enter note": "Eslatmani kiriting!",
+  "cancel": "BEKOR QILISH",
+  "save": "SAQLASH",
+  "delete": "O'chirish",
+  "edit": "Tahrirlash",
+  "edit note": "Eslatmani tahrirlash",
+  "selected": "{} ta tanlandi",
+  "confirm delete":"{} ta fayl o'chirilsinmi?",
+  "cancelDelete": "Bekor qilish"
+}
