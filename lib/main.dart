@@ -34,19 +34,27 @@ class MyApp extends StatelessWidget {
         overlays: [SystemUiOverlay.bottom]);
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
         systemNavigationBarColor: Colors.transparent));
-    return Provider<AppDatabase>(
-      create: (BuildContext context) => AppDatabase(),
-      child: MaterialApp(
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        home: const NotesPage(),
-        routes: {
-          NotesPage.id: (context) => const NotesPage()
-        },
-      ),
+    return ValueListenableBuilder(
+      valueListenable: HiveDB.box.listenable(),
+      builder: (BuildContext context, box, Widget? child) {
+        return Provider<AppDatabase>(
+          create: (BuildContext context) => AppDatabase(),
+          child: MaterialApp(
+            localizationsDelegates: context.localizationDelegates,
+            supportedLocales: context.supportedLocales,
+            locale: context.locale,
+            debugShowCheckedModeBanner: false,
+            themeMode: HiveDB.loadMode() ? ThemeMode.light: ThemeMode.dark,
+            darkTheme: ThemeData.dark(),
+            theme: ThemeData.light(),
+            title: 'Flutter Demo',
+            home: const NotesPage(),
+            routes: {
+              NotesPage.id: (context) => const NotesPage()
+            },
+          ),
+        );
+      },
     );
   }
 }

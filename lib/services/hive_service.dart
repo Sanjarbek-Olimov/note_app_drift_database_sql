@@ -8,8 +8,8 @@ class HiveDB{
     box.put("mode", isLight);
   }
 
-  static bool? loadMode(){
-    return box.get("mode");
+  static bool loadMode(){
+    return box.get("mode", defaultValue: true);
   }
 
   static void storeLang(String lang) async{
