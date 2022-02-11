@@ -16,7 +16,7 @@ class HiveDB{
     box.put("lang", lang);
   }
 
-  static String? loadLang(){
-    return box.get("lang");
+  static String loadLang(){
+    return box.get("lang", defaultValue: "EN");
   }
 }

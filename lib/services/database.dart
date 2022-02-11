@@ -11,7 +11,7 @@ class Notes extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get content => text()();
   TextColumn get date => text()();
-  BoolColumn get isSelected => boolean().withDefault(Constant(false))();
+  BoolColumn get isSelected => boolean().withDefault(const Constant(false))();
 }
 
 LazyDatabase _openConnection() {

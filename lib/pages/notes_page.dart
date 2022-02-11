@@ -21,7 +21,6 @@ class NotesPage extends StatefulWidget {
 class _NotesPageState extends State<NotesPage> {
   late AppDatabase database;
   bool isLoading = true;
-  String _chosenValue = "EN";
   List<Note> noteList = [];
   List<Note> listofNotestoDelete = [];
   TextEditingController noteController = TextEditingController();
@@ -31,11 +30,6 @@ class _NotesPageState extends State<NotesPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    if (HiveDB.loadLang() != null) {
-      setState(() {
-        _chosenValue = HiveDB.loadLang()!;
-      });
-    }
     Timer(const Duration(seconds: 1), () {
       setState(() {
         isLoading = false;
@@ -174,7 +168,7 @@ class _NotesPageState extends State<NotesPage> {
                 alignment: Alignment.centerRight,
                 underline: Container(),
                 isDense: true,
-                value: _chosenValue,
+                value: HiveDB.loadLang(),
                 items: <String>[
                   'EN',
                   'РУ',
@@ -187,16 +181,15 @@ class _NotesPageState extends State<NotesPage> {
                 }).toList(),
                 onChanged: (String? value) async {
                   setState(() {
-                    _chosenValue = value!;
-                    if (_chosenValue == "EN") {
+                    HiveDB.storeLang(value!);
+                    if (value == "EN") {
                       context.setLocale(const Locale('en', 'US'));
-                    } else if (_chosenValue == "РУ") {
+                    } else if (value == "РУ") {
                       context.setLocale(const Locale('ru', 'RU'));
                     } else {
                       context.setLocale(const Locale('uz', 'UZ'));
                     }
                   });
-                  HiveDB.storeLang(_chosenValue);
                 },
               ),
             ),
